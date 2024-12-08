@@ -513,3 +513,17 @@ class GenerateQuarterlyXLSX(APIView):
         response["Content-Disposition"] = 'attachment; filename="quarterly_survey_data.xlsx"'
         wb.save(response)
         return response
+    
+    
+class DeleteFilterView(APIView):
+    
+    def delete(self, request, pk):
+                
+        try:
+            filter = Filter.objects.get(pk=pk, user=request.user)
+        except:
+            return Response({'error': 'filter not found'}, status=status.HTTP_400_BAD_REQUEST)
+        
+        filter.delete()
+        
+        return Response({'success': 'filter deleted'}, status=status.HTTP_200_OK) 

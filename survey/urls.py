@@ -16,4 +16,5 @@ urlpatterns = [
     path('download-survey-csv/', DownloadSurveyCSVView.as_view()),
     path('generate-quarterly-xlsx/', GenerateQuarterlyXLSX.as_view()),
     path('filter-entries-by-date/', FilterEntriesByDateView.as_view()),
+    path('delete-filter/<int:pk>/', DeleteFilterView.as_view()),
 ]
