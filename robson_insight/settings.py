@@ -58,7 +58,8 @@ MIDDLEWARE = [
 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8081"
+    "http://localhost:8081",
+    "https://robson-insights-site.onrender.com"
 ]
 
 REST_FRAMEWORK = {
